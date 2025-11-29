@@ -25,8 +25,13 @@ SECRET_KEY = 'django-insecure-*_=ove&-1^li@lh#4axg))c&ti#kl+bua#v2v82fm!)gkxdt*i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS=['homoverbi.org', 'www.homoverbi.org']
-
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "homoverbi.onrender.com",
+    "homoverbi.org",
+    "www.homoverbi.org",
+]
 
 # Application definition
 
