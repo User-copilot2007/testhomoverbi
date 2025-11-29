@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+    <h1>Головна сторінка</h1>
+    {% if user.is_authenticated %}
+        <p>Ви увійшли як <strong>{{ user.username }}</strong>.</p>
+        <p>Перейдіть у <a href="{% url 'profile' %}">профіль</a> або вийдіть з акаунту.</p>
+    {% else %}
+        <p>Ви не авторизовані.</p>
+        <p>
+            <a class="btn btn-primary" href="{% url 'login' %}">Увійти</a>
+            <a class="btn" href="{% url 'signup' %}">Створити акаунт</a>
+        </p>
+    {% endif %}
+{% endblock %}
