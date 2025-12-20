@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TOTP mandatory site</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;}
+    .card{border:1px solid #ddd;border-radius:12px;padding:16px;margin:16px 0;}
+    input{padding:10px;border:1px solid #ccc;border-radius:10px;width:100%;box-sizing:border-box;}
+    button{padding:10px 14px;border:0;border-radius:10px;cursor:pointer;}
+    .row{display:grid;gap:10px;}
+    .msg{padding:10px;border-radius:10px;margin:8px 0;}
+    .error{background:#ffe8e8;}
+    .ok{background:#e8fff0;}
+    code{background:#f6f6f6;padding:2px 6px;border-radius:6px;}
+  </style>
+</head>
+<body>
+  <h1><a href="/" style="text-decoration:none;color:inherit;">TOTP mandatory site</a></h1>
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="msg {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  {% block content %}{% endblock %}
+</body>
+</html>
